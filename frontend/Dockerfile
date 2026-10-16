@@ -5,11 +5,11 @@ WORKDIR /app
 # Cache des dépendances : copier les fichiers de dépendances AVANT le code source
 COPY package*.json ./
 
+COPY . .
 
 RUN npm install
 
 # Copie du reste du projet et build
-COPY . .
 
 ARG BACKEND_INTERNAL_URL=http://backend:8080
 ENV BACKEND_INTERNAL_URL=$BACKEND_INTERNAL_URL
