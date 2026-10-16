@@ -54,8 +54,8 @@ export function LoginForm() {
           <Package2 size={24} />
         </span>
         <div>
-          <h1 className="text-xl font-bold tracking-tight">Stock Import</h1>
-          <p className="text-sm text-muted-foreground">Stock, import Chine et suivi clients</p>
+          <h1 className="text-xl font-bold tracking-tight">Nantenaina et tsanta joue ensemble</h1>
+          <p className="text-sm text-muted-foreground">testeur , Esoalahy josefa, import Chine et suivi clients</p>
         </div>
       </div>
       <form onSubmit={soumettre} className="space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm">
