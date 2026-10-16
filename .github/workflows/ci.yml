@@ -80,6 +80,7 @@ jobs:
         with:
           context: .
           file: ./frontend/Dockerfile
+          target: production
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/stock_frontend_prod:latest
 
@@ -114,6 +115,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./
+          target: production
           file: ./backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/stock_backend_prod:latest
