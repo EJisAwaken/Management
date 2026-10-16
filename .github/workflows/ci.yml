@@ -125,6 +125,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: docker-compose-file
+          path: |
+              docker-compose.yml
+              .env
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v7
+        with:
+          name: docker-compose-file
+
+      - name: afficher artifact
+        run: ls -lR
+
       - name: Deploy to server
         uses: appleboy/ssh-action@v0.1.9
         with:
@@ -132,4 +148,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            echo "Bonjour, le deploiment fonctionne"
+            mkdir -p /home/ubuntu/stock_app
+            cd /home/ubuntu/stock_app
+            
+            docker-compose -f /path/to/your/docker-compose.yml up -d
