@@ -78,7 +78,7 @@ jobs:
       - name: buildfrontend
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./frontend
           file: ./frontend/Dockerfile
           target: production
           push: true
@@ -119,4 +119,3 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/stock_backend_prod:latest
-
