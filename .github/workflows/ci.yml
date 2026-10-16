@@ -112,7 +112,7 @@ jobs:
       - name: build backend
         uses: docker/build-push-action@v6
         with:
-          context: ./
+          context: ./backend
           target: production
           file: ./backend/Dockerfile
           push: true
