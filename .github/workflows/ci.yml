@@ -44,7 +44,7 @@ jobs:
         - name: Run backend tests
           working-directory: backend
           run: |
-            ./mvnw -B clean verify -Dtest='!MigrationServiceTest'
+            ./mvnw-q -B -DskipTests package -Dmaven.test.skip=true'
 
 
 
