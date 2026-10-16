@@ -1,8 +1,6 @@
 services:
 
   backend:
-    env_file:
-      - .env
     container_name: stock_backend_prod
     image: josefa613/stock_backend_prod:latest
     ports:
@@ -19,8 +17,6 @@ services:
 
 
   bd:
-    env_file:
-      - .env
     container_name: tsanta_postgres
     image: postgres:16-alpine
     restart: unless-stopped
