@@ -120,6 +120,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/stock_backend_prod:latest
 
   deploy:
+    needs: [buildpushfrontend, buildpushbackend]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout du code
@@ -144,4 +145,4 @@ jobs:
           script: |
             mkdir -p /home/ubuntu/stock_app
             cd /home/ubuntu/stock_app
-            docker-compose -f docker-compose.yml up -d
+            docker compose -f docker-compose.yml up -d
