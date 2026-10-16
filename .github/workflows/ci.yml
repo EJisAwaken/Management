@@ -84,7 +84,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/stock_frontend_prod:latest
 
   buildpushbackend:
-#    needs: test-backend
+    needs: test-backend
     runs-on: ubuntu-latest
     permissions:
       contents: read
