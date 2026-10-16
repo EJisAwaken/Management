@@ -78,7 +78,7 @@ jobs:
       - name: buildfrontend
         uses: docker/build-push-action@v6
         with:
-          context: ./
+          context: .
           file: ./frontend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/stock_frontend_prod:latest

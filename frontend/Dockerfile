@@ -4,7 +4,9 @@ WORKDIR /app
 
 # Cache des dépendances : copier les fichiers de dépendances AVANT le code source
 COPY package*.json ./
-RUN npm ci
+
+
+RUN npm install
 
 # Copie du reste du projet et build
 COPY . .
