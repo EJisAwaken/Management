@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   test-frontend:
-    runs-on: ubuntu-24.04 [Beta]
+    runs-on: ubuntu-22.04
     steps:
       - name: Recuperer le code source
         uses: actions/checkout@v4
