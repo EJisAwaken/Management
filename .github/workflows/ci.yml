@@ -129,14 +129,10 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: docker-compose-file
+          include-hidden-files: true
           path: |
-              docker-compose.yml
-              .env
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v7
-        with:
-          name: docker-compose-file
+            docker-compose.yml
+            !./.env
 
       - name: afficher artifact
         run: ls -lR
